@@ -56,7 +56,7 @@ describe('handler', function() {
 
             return weather.main(params).then(function(result) {
                 assert.notEqual(result.body.message,"Error processing your request");
-                assert.equal(result.body.code,"29");
+                assert.equal(result.body.code,"26");
             })
         });
     });
