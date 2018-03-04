@@ -16,5 +16,6 @@ RUN npm install --global serverless serverless-openwhisk
 
 RUN npm config set prefix '~/.npm-global'
 RUN export PATH=~/.npm-global/bin:$PATH
+RUN npm i --save serverless-openwhisk
 
 USER jenkins
