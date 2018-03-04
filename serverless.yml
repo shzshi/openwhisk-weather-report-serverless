@@ -30,8 +30,8 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
-  hello:
-    handler: handler.hello
+  weather:
+    handler: handler.weather
 
 #    Functions can be defined using sequences rather than referring 
 #    to a handler.
