@@ -9,6 +9,7 @@
   "devDependencies": {
     "mocha": "latest",
     "openwhisk": "latest",
+    "eslint": "latest",
     "request": "latest"
   },
   "keywords": [
