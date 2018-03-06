@@ -16,8 +16,8 @@ pipeline {
         }
         stage('Deploy to Dev') {
             environment {
-                OPENWHISK_AUTH = credentials('OPENWHISK_AUTH')
-                OW_APIHOST = credentials('OW_APIHOST')
+                OPENWHISK_AUTH = credentials('OPENWHISK_DEV_AUTH')
+                OW_APIHOST = credentials('OW__DEV_APIHOST')
             }
                 steps {
                    sh '''serverless deploy -v'''
@@ -25,8 +25,8 @@ pipeline {
         }
         stage('Deploy to SIT') {
             environment {
-                OPENWHISK_AUTH = credentials('OPENWHISK_AUTH')
-                OW_APIHOST = credentials('OW_APIHOST')
+                OPENWHISK_AUTH = credentials('OPENWHISK_SIT_AUTH')
+                OW_APIHOST = credentials('OW_SIT_APIHOST')
             }
                 steps {
                    sh '''serverless deploy -v'''
@@ -34,8 +34,8 @@ pipeline {
         }
         stage('Deploy to Pre-Prod') {
             environment {
-                OPENWHISK_AUTH = credentials('OPENWHISK_AUTH')
-                OW_APIHOST = credentials('OW_APIHOST')
+                OPENWHISK_AUTH = credentials('OPENWHISK_PRE_PROD_AUTH')
+                OW_APIHOST = credentials('OW_PRE_PROD_APIHOST')
             }
                 steps {
                    sh '''serverless deploy -v'''
@@ -50,8 +50,8 @@ pipeline {
         }
         stage('Deploy to Production') {
             environment {
-                OPENWHISK_AUTH = credentials('OPENWHISK_AUTH')
-                OW_APIHOST = credentials('OW_APIHOST')
+                OPENWHISK_AUTH = credentials('OPENWHISK_PROD_AUTH')
+                OW_APIHOST = credentials('OW_PROD_APIHOST')
             }
             steps {
                sh '''serverless deploy -v'''
@@ -60,7 +60,7 @@ pipeline {
     }
     post {
         failure {
-            mail to: 'myemail@gmail.com', subject: 'Build failed', body: 'Please fix!'
+//            mail to: 'myemail@gmail.com', subject: 'Build failed', body: 'Please fix!'
         }
     }
 }
