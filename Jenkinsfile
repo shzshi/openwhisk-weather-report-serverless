@@ -17,7 +17,7 @@ pipeline {
         stage('Deploy to Dev') {
             environment {
                 OPENWHISK_AUTH = credentials('OPENWHISK_DEV_AUTH')
-                OW_APIHOST = credentials('OW__DEV_APIHOST')
+                OW_APIHOST = credentials('OW_DEV_APIHOST')
             }
                 steps {
                    sh '''serverless deploy -v'''
