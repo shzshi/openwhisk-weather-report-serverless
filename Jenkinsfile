@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Deploy to Dev') {
             environment {
-                OPENWHISK_AUTH = credentials('OPENWHISK_DEV_AUTH')
+                OW_AUTH = credentials('OPENWHISK_DEV_AUTH')
                 OW_APIHOST = credentials('OW_APIHOST')
             }
                 steps {
