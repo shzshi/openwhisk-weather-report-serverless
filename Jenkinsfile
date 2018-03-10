@@ -25,7 +25,7 @@ pipeline {
         }
         stage('Deploy to SIT') {
             environment {
-                OPENWHISK_AUTH = credentials('OPENWHISK_SIT_AUTH')
+                OW_AUTH = credentials('OPENWHISK_SIT_AUTH')
                 OW_APIHOST = credentials('OW_APIHOST')
             }
                 steps {
