@@ -35,7 +35,7 @@ pipeline {
         stage('Deploy to Pre-Prod') {
             environment {
                 OW_AUTH = credentials('OPENWHISK_PRE_PROD_AUTH')
-                OW_APIHOST = credentials('OW_PRE_PROD_APIHOST')
+                OW_APIHOST = credentials('OW_APIHOST')
             }
                 steps {
                    sh '''serverless deploy -v'''
@@ -51,7 +51,7 @@ pipeline {
         stage('Deploy to Production') {
             environment {
                 OW_AUTH = credentials('OPENWHISK_PROD_AUTH')
-                OW_APIHOST = credentials('OW_PROD_APIHOST')
+                OW_APIHOST = credentials('OW_APIHOST')
             }
             steps {
                sh '''serverless deploy -v'''
